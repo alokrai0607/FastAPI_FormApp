@@ -3,6 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 import os
 
+
 DATABASE_URL = os.getenv("DATABASE_URL", "mysql+mysqlconnector://root:0303@localhost/form_app")
 
 engine = create_engine(DATABASE_URL, echo=True)

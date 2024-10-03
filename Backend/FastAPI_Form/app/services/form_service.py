@@ -4,10 +4,14 @@ from ..repositories.form_repository import UserRepository
 from ..schema.user_schema import UserSchema, UserUpdateSchema
 
 class UserService:
+
     def __init__(self, db: Session):
         self.repository = UserRepository(db)
 
     def create_user(self, user_data: UserSchema):
+#The ** syntax is known as the dictionary unpacking
+#This syntax is used to pass dictionary keys and values as keyword 
+# arguments to a function or class constructor.
         user = User(**user_data.dict())
         return self.repository.create_user(user)
 

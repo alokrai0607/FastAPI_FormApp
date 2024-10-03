@@ -17,7 +17,9 @@ app.add_middleware(
 def startup_event():
     init_db()
 
+
 app.include_router(user_router)
+
 
 # .\venv\Scripts\Activate
 
